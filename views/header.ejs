@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <!-- responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>E - Learning</title>
+    <!-- Favicon -->
+    <link rel="icon" href="/images/icone3.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="/images/icone3.ico" type="image/x-icon"/>
+    <!-- Bootstrap stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- Custom CSS stylesheets -->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/footer.css">
+    
+    
+    <!-- Bootstrap scripts -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <!-- Javascripts -->
+ </head>
+  <body>
+    <nav class="nav-container">
+        <!-- left nav -->
+        <ul class="left-side">
+          <li>
+            <div class="barraTitolo">
+              <div>
+                <a href="/">
+                  <image class="imgTitolo" src="/images/icone3.ico" alt="icone3.ico" alt="icone3.ico"/>
+                </a>
+                <p>E - Learning</p> 
+              </div>          
+            </div>       
+          </li>
+          <li>
+            <div id="alert-message">
+              <% if(message) { %>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <span><%= message %></span> 
+                  <button type="button" onclick="removeElement()" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                  </button>
+                </div>
+              <% } %>
+              <% if(message2) { %>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <span><%= message2 %></span> 
+                  <button type="button" class="btn-close" onclick="removeElement()" data-bs-dismiss="alert" aria-label="Close">
+                  </button>
+                </div>
+              <% } %>
+              <script>
+                function removeElement() {
+                  document.getElementById("alert-message").style.display = "none";
+                }
+              </script>
+            </div>
+          </li>
+          <li width="30em">
+            <form class="searchBottone spaziatura" method="POST" action="/search" >
+              <select class="form-select" id="tipoRicerca" aria-label="Tipo" name="tipo">
+                <option selected>Scegli la ricerca</option>
+                <option>Per Titolo / Descrizione</optionS>
+                <option>Per Categoria</option>
+              </select>
+              <input class="form-control me-2"  type="search" placeholder="Search" aria-label="Search" name="search">
+            </form>
+      </ul>
+      <!-- right nav -->
+      <ul class="right-side">
+        <% if(loggato==='false'){%>
+        <li id="loginLI">
+          <div>
+            <a href="/login">
+              <button class="button" id="login-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                </svg>
+              </button>
+            </a>
+            <p>Login</p> 
+          </div> 
+        </li>
+        <li id="signUpLI">
+          <div class="spaziatura">
+            <a href="/signUp">
+              <button class="button" id="signUp-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+                <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                </svg>
+              </button>
+            </a>
+            <p>Registrati</p> 
+          </div> 
+        </li>
+        <% } else{ %>
+          <li id="profiloLI" class=" abbassa">
+            <a href="/profile" class="blackLink">
+              Profilo
+            </a>
+          </li>
+        <li id="logoutLI" class="spaziatura abbassa">
+          <a href="/logout" class="blackLink">
+            Logout
+          </a>
+        </li>
+        <% }%>
+      </div>
+      </ul>
+    </nav>
+    
+    

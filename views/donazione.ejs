@@ -1,0 +1,53 @@
+<%-include('header', {title, active:'home'});%>
+
+<main class="container-fluid mt-3" id="containter-donation">
+    <div class="row">
+        <div class="col-8 mx-auto">
+          <%if(type==='new'){%>
+          <form method="POST" action="/add-donation" id="donation-form" class="col-6 mx-auto">
+          <%}else{%>
+          <form method="POST" action="/inc-donation" id="donation-form" class="col-6 mx-auto">
+          <%}%>
+            <h3>Inserire dati carta di credito e Importo</h3>
+            <div class="form-group">
+              <label for="text">Nome</label>
+              <input type="text" name="nome" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label for="text">Cognome</label>
+              <input type="text" name="cognome" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label for="number">Numero Carta</label>
+              <input type="number" name="card" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label for="number">CCV</label>
+              <input type="number" name="ccv" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label for="number">Mese</label>
+              <input type="number" name="expMM" class="form-control" placeholder="MM" required />
+            </div>
+            <div class="form-group">
+              <label for="number">Anno</label>
+              <input type="number" name="expYY" class="form-control" placeholder="YYYY" required />
+            </div>
+            <div class="form-group col-md-4">
+              <span>
+                <%if(type==='new'){%>
+                <input type="hidden" name="id_corso" class="form-control" value="<%= id_corso%>"/>
+                <%}else{%>
+                <input type="hidden" name="id_corso" class="form-control" value="<%= id_corso%>"/>
+                <input type="hidden" name="id_donazione" class="form-control" value="<%= output.id_donazione%>"/>
+                <%}%>
+                <label for="number">Importo</label>
+                <input type="number" name="importo" class="form-control" required />
+              </span>
+            </div>
+            <button type="submit" class="btn btn-warning">Dona</button>
+          </form>
+        </div>
+    </div> 
+</main>
+<%- include('footer'); -%>

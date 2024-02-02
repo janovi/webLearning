@@ -1,0 +1,44 @@
+<%-include('header', {title, active:'Risorse'});%>
+<main>
+    <article class="print_donazioni">
+        <h2 class="main-title">Elenco Donazioni</h2>
+        <div class="corso">
+            <table class="tabella">
+                <thead>
+                    <tr>
+                        <th>Donatore</th>
+                        <th>Corso</th>
+                        <th>Quantità donata</th>
+                    </tr>
+                </thead>
+                <% report.forEach((el)=>{%>
+                    <tbody>
+                        <td><%= el.utente%></td>
+                        <td><%= el.corso%></td>
+                        <td>€ <%= el.importo%></td>
+                    </tbody>
+                <%});%>
+            </table>
+        </div>
+    </article>
+    <aside class="print_donazioni_tot">
+        <h2 class="main-title">Fondo donazioni</h2>
+        <div class="corso">
+            <table class="tabella">
+                <thead>
+                    <tr>
+                        <th>Corso</th>
+                        <th>Totale fondo</th>
+                    </tr>
+                </thead>
+                <% totals.forEach((el)=>{%>
+                    <tbody>
+                        <td><%= el.titolo_corso%></td>
+                        <td>€ <%= el.totale%></td>
+                    </tbody>
+                <%});%>
+            </table>
+        </div>
+    </aside>
+</main>
+<%-include('footer');%>

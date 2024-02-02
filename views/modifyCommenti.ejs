@@ -1,0 +1,22 @@
+<%- include('header', {message}); -%>
+
+<main class="container-fluid mt-3">
+    <div class="row">
+        <div class="col-8 mx-auto">
+          <form method="POST" action="/modifica-commento" id="modify-form" class="col-6 mx-auto">
+            <h1>Modifica Commento</h1>           
+            <div class="form-group">
+              <div class="form-group">
+                <input type="hidden" name="id_commento" class="form-control" value="<%= commento.id_commento%>"/>
+                <input type="hidden" name="id_utente" class="form-control" value="<%= commento.id_utente%>"/>
+              </div>
+              <label for="text">Aggiorna Commento</label>
+              <input type="text" name="commento" class="form-control" value="<%= commento.contenuto_commento%>"/>
+            </div>
+            <button type="submit" class="btn btn-warning">Invia</button>
+          </form>
+        </div>
+    </div>
+</main>
+
+<%- include('footer'); -%>

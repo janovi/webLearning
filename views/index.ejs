@@ -1,0 +1,77 @@
+<%-include('header', {title, active:'home'});%>
+<main>
+  <h2 class="main-title">Elenco Corsi</h2>
+  <div >
+      <table class="table">
+        <thead>
+        <tr>
+            <th></th> <!--immagine-->
+            <th>Titolo</th>
+            <th>Descrizione</th>
+            <th>Categoria</th>
+            <th>Autore</th>
+            <th>Documenti correlati</th>
+            <th>Dona</th>
+            <% if(loggato==='true') {%>
+                <th>Segui</th>
+                <%}%>
+            
+        </tr>
+        </thead>
+        <% let cont = 0;%>
+        <% corsi.forEach((el)=>{%>
+        <tbody>
+            <tr>
+                <td><img class="imgCover" src="<%= el.img%>" width="100em" height="50em"></td>
+                <td><%= el.titolo%></td>
+                <td><%= el.descrizione%></td>
+                <td><%= el.categoria%></td>
+                <td><%= el.autore%></td>
+                <td><a href="/corso/<%= el.id%>">Link</a></td>
+                <td>
+                    <a href="/donazioni/<%= el.id%>">
+                    <button class="button-add-don" id="btn-add-don<%= cont%>">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" fill="currentColor" class="bi bi-gift" viewBox="0 0 16 16">
+                            <path d="M3 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0v.006c0 .07 0 .27-.038.494H15a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 14.5V7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2.038A2.968 2.968 0 0 1 3 2.506V2.5zm1.068.5H7v-.5a1.5 1.5 0 1 0-3 0c0 .085.002.274.045.43a.522.522 0 0 0 .023.07zM9 3h2.932a.56.56 0 0 0 .023-.07c.043-.156.045-.345.045-.43a1.5 1.5 0 0 0-3 0V3zM1 4v2h6V4H1zm8 0v2h6V4H9zm5 3H9v8h4.5a.5.5 0 0 0 .5-.5V7zm-7 8V7H2v7.5a.5.5 0 0 0 .5.5H7z"/>
+                          </svg>
+                    </button>
+                    </a>
+                </td>
+                <% if(loggato==='true') {%>
+                    <% if(el.seguito == null || el.utente == null){ %>
+                    <!-- Se corsto NON seguito, segui -->
+                    <td>
+                        <form action="/follow-corso" method="POST">
+                            <input type="hidden" name="corso" value="<%= el.id %>">
+                            <button type="submit" class="button feed-btn" id="follow-btn<%= cont%>">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </td>
+                    <% }else{ %>
+                    <!-- Se seguita, smetti di seguire -->
+                    <td>
+                        <form action="/unfollow-corso" method="POST">
+                            <input type="hidden" name="corso" value="<%= el.id %>">
+                            <button type="submit" class="button feed-btn" id="unfollow-btn<%= cont%>">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-bookmark-fill" viewBox="0 0 16 16">
+                                    <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </td>
+                    <% } %> 
+                <% } %> <!--end loggato = true-->
+            </tr>
+        </tbody>
+        <% cont = cont+1;%>
+        <%});%> <!--end forEach corsi-->
+      </table>
+      
+  </div>
+  
+</main> 
+   
+<%-include('footer');%>

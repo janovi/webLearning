@@ -1,0 +1,27 @@
+<%-include('header', {title, active:'Risorse'});%>
+<main>
+    <h2 class="main-title">Elenco documenti preferiti</h2>
+    <table class="tabella">
+        <thead>
+            <tr>
+                <th>Nome Documento</th>
+                <th>Dipendenza corso</th>
+                <th>Data</th>
+                <th>Apri Risorse</th>
+                <th>Note</th>
+        </tr>
+        </thead>
+        <% report.forEach((el)=>{%>
+        <tbody>
+            <tr>
+                <td><%= el.titolo%></td>
+                <td><a href="/corso/<%= el.id_corso%>"><%= el.corso%></a></td>
+                <td><%= el.data%></td>
+                <td><a href="/corso/<%= el.id_corso%>/documento/<%= el.id_documento%>">Link</a></td>
+                <td><%= el.note%></td>
+            </tr>
+        </tbody>
+        <%});%>
+    </table>
+</main>
+<%-include('footer');%>

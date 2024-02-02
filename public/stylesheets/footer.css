@@ -1,0 +1,66 @@
+footer {
+ 
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+  color: #888;
+}
+
+
+
+/*.text-cente{
+  background-color: #333;
+  text-align: center;
+  color: hsl(0, 8%, 10%);
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 0;
+}
+
+
+
+
+Opzionale: Stili aggiuntivi per migliorare l'aspetto del footer 
+footer{
+  background-color: #333;
+  color: #fff;
+}
+.containere {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 0;
+  justify-content: space-between;
+  
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.col-md-6 {
+  width: 50%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}*/

@@ -1,0 +1,30 @@
+<%- include('header', {message}); -%>
+
+<main class="container-fluid mt-3">
+  <div class="row">
+    <div class="col-8 mx-auto">
+      <form method="POST" action="/modifica-corso" id="modify-form" class="col-6 mx-auto">
+        <h1>Modifica Progetto</h1>           
+        <div class="form-group">
+          <div class="form-group">
+            <label for="id_corso"></label>
+            <input type="hidden" name="id_corso" class="form-control" value="<%= corso.id_corso%>"/>
+          </div>
+          <label for="text">Aggiorna Titolo</label>
+          <input type="text" name="titolo" class="form-control" value="<%= corso.titolo_corso%>"/>
+        </div>
+        <div class="form-group">
+          <label for="text">Aggiorna Descrizione</label>
+          <input type="text" name="descrizione" class="form-control" value="<%= corso.descrizione_corso%>"/>
+        </div>
+        <div class="form-group">
+          <label for="text">Cambia Categoria</label>
+          <input type="text" name="categoria" class="form-control" value="<%= corso.categoria_corso%>"/>
+        </div>
+        <button type="submit" class="btn btn-warning">Invia</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<%- include('footer'); -%>

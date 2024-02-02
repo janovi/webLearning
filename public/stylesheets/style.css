@@ -1,0 +1,415 @@
+html{
+  scroll-behavior: smooth;
+}
+
+a{
+  text-decoration: none;
+  /* color: white; */
+}
+
+.text-center {
+  text-decoration: overline;
+  text-align: center;
+}
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.print_donazioni{
+  display: inline-block;
+  width: 45%;
+}
+
+.print_donazioni_tot{
+  display: inline-block;
+  width: 35%;
+  position: relative;
+  left: 10%;
+}
+
+.imgCover{
+  border-radius: 15%;
+}
+
+/* select the nav container and apply properties */
+.nav-container{
+  background-color: rgba(20, 122, 255, 0.998);
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+
+  /* apply flex to get right and left navigations in a row */
+  display: flex;
+  /* push both the blocks to the edges using justify-content */
+  justify-content: space-between;
+  margin-bottom: 300px;
+}
+
+/* target the ul and remove the bullets */
+.right-side, .left-side{
+  list-style-type: none;
+}
+/* change li display property from block to inline block */
+.right-side li, .left-side li{
+  display: inline-block;
+}
+
+/* apply hover */
+.right-side li a:hover, .left-side li a:hover{
+  background-color: #ddd;
+}
+
+.barraTitolo{
+  background-color: rgba(20, 122, 255, 0.609);
+  padding: 0.5em;
+  width: 100%;
+  
+}
+
+.img-with-text {
+  margin: 0.5em;
+  text-align: justify;
+  width: 20em;
+}
+
+.img-with-text img {
+  display: block;
+  margin: 0 auto;
+}
+
+.dropdown{
+  display:inline-block;
+  position:relative;
+  margin-left:5%;
+  /* top: 5em; */
+  left:55%;
+  width: auto;
+}
+
+.searchBar{
+  display:inline-block;
+  position:relative;
+  bottom: 0.8em;
+  width:15em;
+}
+
+
+.spaziatura{
+  margin-left: 2em;
+  margin-right: 1em;
+}
+
+.abbassa{
+  margin-top: 2em;
+}
+
+.add-comment-section{
+  position: relative;
+  padding-left: 2em;
+}
+
+#usr-btn{
+  background-color: rgb(255, 255, 255);
+  color:rgb(0, 0, 0);
+  border-bottom: 2em;
+}
+
+/* BOTTOM SECTION  */
+main{
+  padding-top: 150px;
+  padding-bottom: 150px;
+  left: 5em;
+  width: 90vw;
+  top: 10em;
+  height: 100%;
+}
+
+.main-title{
+  display: flex;
+  margin: 0em;
+}
+
+
+.tabella{
+  border-top: solid rgb(191, 189, 189) 0.5px;
+  border-bottom: solid rgb(191, 189, 189) 0.5px;
+  width: 100%;
+}
+
+tbody{
+  margin:auto;
+  border-bottom: solid lightgray 0.5px;
+}
+
+label{
+  margin-right: 2em;
+}
+
+.label-pad{
+  padding-left: 2em;
+}
+
+.blackLink{
+  color: black;
+}
+
+.btn-donations{
+  transition-duration: 250ms;
+  color:rgb(255, 255, 255);
+  background-color: rgb(20, 79, 255);
+  width: auto;
+  height: auto;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+}
+
+.button{
+  transition-duration: 250ms;
+  color:rgb(255, 255, 255);
+  background-color: rgba(20, 122, 255, 0.609); 
+  width: auto;
+  height: auto;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+}
+
+.button-add, .button-money{
+  transition-duration: 250ms;
+  color: rgb(20, 141, 255);
+  background-color: rgba(255, 255, 255, 0);
+  outline: none;
+  border: none;
+  padding-top: 1.5em;
+}
+
+.button-add-don{
+  transition-duration: 250ms;
+  color: rgb(255, 97, 124);
+  background-color: rgba(255, 255, 255, 0);
+  outline: none;
+  border: none;
+  padding-top: 1.5em;
+}
+
+.button-comments{
+  transition-duration: 250ms;
+  color: rgb(20, 90, 255);
+  background-color: rgba(255, 0, 0, 0);
+  outline: none;
+  border: none;
+  padding-top: 1.5em;
+}
+
+.button-add:active, .button-add-don:active, .button-comments:active, .button-money:active{
+  transition-duration: 0ms;
+  transform: translateY(4px);
+}
+
+.button-add:hover, .button-comments:hover, .button-money:hover{
+  color: rgb(43, 20, 255);
+}
+
+.button-add-don:hover{
+  color: rgb(144, 148, 255);
+}
+
+.buttonAdd{
+  background-color: rgb(126, 20, 255);
+  border-radius: 2%;
+  font-size: 20px;
+  width: auto;
+  height: auto;
+  padding:0;
+  position: relative;
+  left: 5em;
+  outline: none;
+  border: none;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+#src-type{
+  position: relative;
+  padding-left: 10%;
+}
+
+.btn-warning{
+  position: relative;
+  top: 15px;
+  background-color: rgb(20, 43, 255);
+}
+
+.searchBottone{
+  color: white;
+  border: none;
+  width: 150%;
+  display: inline-block;
+}
+
+.btn-danger{
+  position: relative;
+  top: 15px;
+  background-color: rgb(202, 19, 19);
+}
+
+.btn-secondary{
+  position: relative;
+  top: 15px;
+  left: 2em;
+  background-color: rgb(255, 147, 20);
+}
+
+.buttonDropdownToggle{
+  color: white;
+  border: none;
+  outline:none;
+  width: auto;
+  height: 3.9em;
+  border-radius: 10px;
+  background-color: rgb(255, 147, 20);
+  border-color: rgb(255, 147, 20);
+}
+
+.btn-donations{
+  border-radius:10px;
+}
+
+#dropdownMenuButton1:hover, .btn-donations:hover{
+  position: relative;
+  background-color: rgb(75, 81, 250) ;
+  border-color: rgb(20, 51, 255);
+}
+
+.mod-btn, .del-btn{
+  height:50px;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.mod-btn{
+  color:rgb(12, 114, 197);
+}
+
+.del-btn{
+  color:rgb(202, 19, 19);
+}
+
+.feed-btn{
+  border-radius: 2px;
+  background-color: rgba(0, 128, 0, 0);
+  color: green;
+  width: 30px;
+  height: 30px;
+  margin-top: 1em;
+  margin-right: 1em;
+}
+
+.form-group{
+  position: relative;
+  padding-bottom: 30px;
+}
+
+.button:active{
+  transition-duration: 0ms;
+  transform: translateY(4px);
+}
+
+.containter-user{
+  width: 100vw;
+}
+
+.user-photo{
+  border-radius: 25%;
+  margin-left: 2em;
+}
+
+.user-info{
+  position: relative;
+  left: 2em;
+}
+
+.user-window{
+  display: flex;
+}
+
+.user-info p{
+  margin: 1em;
+}
+
+.user-info h5{
+  margin: 0;
+}
+
+.container-feeds{
+  position: relative;
+  left: 10em;
+}
+
+.container-feeds .btn-warning{
+  margin-bottom: 1.5em;
+}
+
+.services-buttons{
+  position: relative;
+  left: 3em;
+  top: 2em;
+}
+
+.alert{
+  position: fixed;
+  top: 0;
+}
+
+.container-add{
+  position: relative;
+  left: 20em;
+}
+
+.container-add .btn-warning{
+  margin-bottom: 1.5em;
+}
+
+.container-money{
+  position: relative;
+  left: 30em;
+}
+

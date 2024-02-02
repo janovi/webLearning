@@ -1,0 +1,31 @@
+{
+  "name": "progettoweb",
+  "version": "0.0.0",
+  "private": true,
+  "author": {
+    "name": "Kodjovi Devi",
+    "email": "20035630@studenti.uniupo.it"
+  },
+  "license": "ISC",
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "^3.1.9",
+    "express": "~4.16.1",
+    "express-fileupload": "^1.4.0",
+    "express-session": "^1.17.3",
+    "express-validator": "^7.0.1",
+    "http-errors": "~1.6.3",
+    "mkdirp": "^3.0.1",
+    "moment": "^2.29.4",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.22",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "sqlite3": "^5.1.6"
+  }
+}
